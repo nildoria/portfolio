@@ -9,7 +9,7 @@ import GlowCard from "../../helper/glow-card";
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#1a1a3e]">
       <Image
         src="/section.svg"
         alt="Hero"
@@ -20,11 +20,11 @@ function Experience() {
 
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
+          <span className="w-24 h-[2px] bg-[#0e0e1f]"></span>
+          <span className="bg-[#0e0e1f] w-fit text-white p-2 px-5 text-xl rounded-md">
             Experiences
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-[#0e0e1f]"></span>
         </div>
       </div>
 
@@ -50,12 +50,12 @@ function Experience() {
                         className="absolute bottom-0 opacity-80"
                       />
                       <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
+                        <p className="text-xs sm:text-sm text-[#00f0ff]">
                           {experience.duration}
                         </p>
                       </div>
                       <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                        <div className="text-[#7000ff]  transition-all duration-300 hover:scale-125">
                           <BsPersonWorkspace size={36} />
                         </div>
                         <div>
