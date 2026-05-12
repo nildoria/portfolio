@@ -3,56 +3,72 @@ import { timeConverter } from '@/utils/time-converter';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsHeartFill } from 'react-icons/bs';
-import { FaCommentAlt } from 'react-icons/fa';
+import { FaCommentAlt, FaClock } from 'react-icons/fa';
 
 function BlogCard({ blog }) {
-
   return (
-    <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
-    >
-      <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
+    <div className="project-card group relative rounded-xl border border-[#1a1a3e] overflow-hidden transition-all duration-500 hover:-translate-y-1"
+      style={{ background: 'linear-gradient(135deg, #0a0a18 0%, #0e0e1f 100%)' }}>
+
+      {/* Top gradient border line */}
+      <div className="flex flex-row">
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#ff2d78] to-[#8b2cff]"></div>
+        <div className="h-[1px] w-full bg-gradient-to-r from-[#8b2cff] to-[#00e5ff]"></div>
+      </div>
+
+      {/* Cover image */}
+      <div className="h-44 w-full overflow-hidden relative">
         <Image
           src={blog?.cover_image}
-          height={1080}
-          width={1920}
-          alt=""
-          className='h-full w-full group-hover:scale-110 transition-all duration-300'
+          height={400}
+          width={700}
+          alt={blog.title}
+          className="h-full w-full object-cover group-hover:scale-105 transition-all duration-500 opacity-80 group-hover:opacity-100"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a18] via-transparent to-transparent"></div>
       </div>
-      <div className="p-2 sm:p-3 flex flex-col">
-        <div className="flex justify-between items-center text-[#16f2b3] text-sm">
-          <p>{timeConverter(blog.published_at)}</p>
-          <div className="flex items-center gap-3">
-            <p className="flex items-center gap-1">
-              <BsHeartFill />
-              <span>{blog.public_reactions_count}</span>
-            </p>
-            {blog.comments_count > 0 &&
-              <p className="flex items-center gap-1">
-                <FaCommentAlt />
-                <span>{blog.comments_count}</span>
-              </p>
-            }
+
+      {/* Content */}
+      <div className="p-4 flex flex-col gap-3">
+
+        {/* Meta row */}
+        <div className="flex items-center justify-between text-[10px] font-mono">
+          <span className="text-[#00f0ff]">{timeConverter(blog.published_at)}</span>
+          <div className="flex items-center gap-3 text-[#a1a1aa]">
+            <span className="flex items-center gap-1">
+              <FaClock size={9} />
+              {blog.reading_time_minutes} min
+            </span>
+            <span className="flex items-center gap-1">
+              <BsHeartFill size={9} className="text-[#ff2d78]" />
+              {blog.public_reactions_count}
+            </span>
+            {blog.comments_count > 0 && (
+              <span className="flex items-center gap-1">
+                <FaCommentAlt size={9} />
+                {blog.comments_count}
+              </span>
+            )}
           </div>
         </div>
+
+        {/* Title */}
         <Link target='_blank' href={blog.url}>
-          <p className='my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500'>
+          <h3 className="text-sm font-semibold text-white leading-snug hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#ff2d78] hover:to-[#00e5ff] transition-all duration-300 cursor-pointer line-clamp-2">
             {blog.title}
-          </p>
+          </h3>
         </Link>
-        <p className='mb-2 text-sm text-[#16f2b3]'>
-          {`${blog.reading_time_minutes} Min Read`}
-        </p>
-        <p className='text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3'>
+
+        {/* Description */}
+        <p className="text-xs text-[#a1a1aa] leading-relaxed line-clamp-2">
           {blog.description}
         </p>
-        {/* <div className="">
-          <Link target='_blank' href={blog.url}>
-            <button className='bg-violet-500 text-white px-3 py-1.5 rounded-full text-xs'>
-              Read More
-            </button>
-          </Link>
-        </div> */}
+
+        {/* Read more */}
+        <Link target='_blank' href={blog.url}
+          className="mt-1 self-start text-[10px] font-semibold px-3 py-1 rounded-full border border-[#1a1a3e] text-[#00e5ff] hover:bg-[#00e5ff]/10 hover:border-[#00e5ff] transition-all duration-300">
+          Read Article →
+        </Link>
       </div>
     </div>
   );

@@ -19,8 +19,7 @@ const stats = [
 
 function HeroSection() {
   return (
-    <section className="hero-section relative flex flex-col items-center justify-between py-8 lg:py-16 overflow-hidden">
-
+    <section className="hero-section relative w-full overflow-hidden">
       {/* Background glows */}
       <div className="hero-glow-left absolute -top-20 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,42,131,0.12) 0%, transparent 70%)' }} />
@@ -39,7 +38,9 @@ function HeroSection() {
         priority
       />
 
-      <div className="grid grid-cols-1 items-center lg:grid-cols-2 lg:gap-16 gap-y-12 w-full">
+      {/* Container */}
+      <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-8 lg:py-16">
+        <div className="grid grid-cols-1 items-center lg:grid-cols-2 lg:gap-16 gap-y-12">
 
         {/* ── LEFT SIDE ── */}
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-10 lg:pt-10">
@@ -224,9 +225,10 @@ function HeroSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> {/* end right column */}
 
-      </div>
+        </div> {/* end grid */}
+      </div> {/* end container */}
     </section>
   );
 };

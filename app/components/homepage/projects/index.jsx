@@ -1,34 +1,42 @@
 import { projectsData } from '@/utils/data/projects-data';
-import ProjectCard from './project-card';
+import SingleProject from './single-project';
 
 const Projects = () => {
 
   return (
-    <div id='projects' className="relative z-50  my-12 lg:my-24">
-      <div className="sticky top-10">
-        <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
-        <div className="flex items-center justify-start relative">
-          <span className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
-            PROJECTS
-          </span>
-          <span className="w-full h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+    <div id='projects' className="relative z-50 my-12 lg:my-24 w-full">
 
-      <div className="pt-24">
-        <div className="flex flex-col gap-6">
+      {/* Background glows */}
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%)' }} />
+
+      <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
+
+        {/* Section heading */}
+        <div className="flex flex-col items-center mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#ff2d78]"></span>
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#ff2d78]">Portfolio</span>
+            <span className="h-[1px] w-12 bg-gradient-to-l from-transparent to-[#ff2d78]"></span>
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff2d78] via-[#8b2cff] to-[#00e5ff]">Projects</span>
+          </h2>
+          <p className="text-[#a1a1aa] text-sm lg:text-base max-w-xl text-center">
+            A selection of real-world builds — WordPress, WooCommerce, automation, and full-stack web applications.
+          </p>
+          <div className="mt-6 h-[1px] w-1/2 bg-gradient-to-r from-transparent via-[#8b2cff] to-transparent"></div>
+        </div>
+
+        {/* Project grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {projectsData.slice(0, 4).map((project, index) => (
-            <div
-              id={`sticky-card-${index + 1}`}
-              key={index}
-              className="sticky-card w-full mx-auto max-w-2xl sticky"
-            >
-              <div className="box-border flex items-center justify-center rounded shadow-[0_0_30px_0_rgba(0,0,0,0.3)] transition-all duration-[0.5s]">
-                <ProjectCard project={project} />
-              </div>
-            </div>
+            <SingleProject key={index} project={project} />
           ))}
         </div>
+
       </div>
     </div>
   );
