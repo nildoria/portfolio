@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Dark background -->
+  <rect width="64" height="64" rx="8" fill="#0d1224"/>
+  <!-- Left bracket < -->
+  <text x="4" y="46" font-family="monospace, Courier New" font-size="42" font-weight="bold" fill="#F48024">&lt;/&gt;</text>
+</svg>

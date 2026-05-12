@@ -1,6 +1,6 @@
 {
   "name": "developer-portfolio",
-  "description": "Portfolio of Abu Said",
+  "description": "Portfolio of Sabbir Ahmed",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -27,10 +27,12 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",
     "autoprefixer": "latest",
+    "baseline-browser-mapping": "^2.10.29",
     "eslint": "latest",
     "eslint-config-next": "^16.0.1",
     "postcss": "latest",
     "sass": "^1.69.5",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "^6.0.3"
   }
 }

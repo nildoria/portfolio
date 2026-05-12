@@ -13,6 +13,11 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: #0d1224;
+  font-family: var(--font-body), "Hanken Grotesk Fallback", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), "Bricolage Grotesque Fallback", sans-serif;
 }
 
 #sticky-card-1 {
