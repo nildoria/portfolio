@@ -11,6 +11,11 @@
   --border-color: #1a1a3e;
 }
 
+/* react-fast-marquee: allow vertical overflow so hover-scaled cards aren't clipped */
+.rfm-marquee-container {
+  overflow-x: unset !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

@@ -37,7 +37,7 @@ function ContactSection() {
           <div className="mt-6 h-[1px] w-1/2 bg-gradient-to-r from-transparent via-[#ff2d78] to-transparent"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Contact form */}
           <ContactForm />

@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className={`${bricolage.variable} ${hanken.variable}`}>
         <ToastContainer />
         <Navbar />
-        <main className="min-h-screen relative w-full text-white">
+        <main className="min-h-screen relative w-full text-white pt-[68px]">
           {children}
           <ScrollToTop />
         </main>
