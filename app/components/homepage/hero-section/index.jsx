@@ -8,170 +8,224 @@ import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 
+const skillBadges = ['WordPress', 'WooCommerce', 'Elementor', 'PHP', 'JavaScript', 'GSAP', 'REST API', 'Docker'];
+
+const stats = [
+  { value: '10+', label: 'Years Experience' },
+  { value: '100+', label: 'Websites Built' },
+  { value: 'WP & WC', label: 'Expert' },
+  { value: 'Remote', label: 'Available' },
+];
+
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
+    <section className="hero-section relative flex flex-col items-center justify-between py-8 lg:py-16 overflow-hidden">
+
+      {/* Background glows */}
+      <div className="hero-glow-left absolute -top-20 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(255,42,131,0.12) 0%, transparent 70%)' }} />
+      <div className="hero-glow-right absolute -top-20 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.10) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse, rgba(139,44,255,0.06) 0%, transparent 70%)' }} />
+
+      {/* Hero SVG background */}
       <Image
         src="/hero.svg"
         alt="Hero"
         width={1572}
         height={795}
-        className="absolute -top-[98px] -z-10"
+        className="absolute -top-[98px] -z-10 opacity-30"
         priority
       />
 
-      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
-        <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-          <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
-            Hello, <br />
-            This is {' '}
-            <span className="text-[#ff2d78]">{personalData.name}</span>
-            {` , I'm a Professional `}
-            <span className="text-[#00f0ff]">{personalData.designation}</span>
-            .
+      <div className="grid grid-cols-1 items-center lg:grid-cols-2 lg:gap-16 gap-y-12 w-full">
+
+        {/* ── LEFT SIDE ── */}
+        <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-10 lg:pt-10">
+
+          {/* Availability badge */}
+          <div className="hero-fade-up hero-delay-0 mb-6 flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1a1a3e] bg-[#0e0e1f]/60 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-[#00f0ff] animate-pulse"></span>
+            <span className="text-xs text-[#a1a1aa] font-medium tracking-wide">Available for Remote Work</span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="hero-fade-up hero-delay-1 text-4xl font-bold leading-tight text-white md:font-extrabold lg:text-5xl lg:leading-[1.15] mb-3">
+            Hi, I&apos;m{' '}
+            <span className="hero-name-gradient">Sabbir Ahmed</span>
           </h1>
 
-          <div className="my-12 flex items-center gap-5">
-            <Link
-              href={personalData.github}
-              target='_blank'
-              className="transition-all text-[#ff2d78] hover:scale-125 duration-300"
-            >
-              <BsGithub size={30} />
-            </Link>
-            <Link
-              href={personalData.linkedIn}
-              target='_blank'
-              className="transition-all text-[#ff2d78] hover:scale-125 duration-300"
-            >
-              <BsLinkedin size={30} />
-            </Link>
-            <Link
-              href={personalData.facebook}
-              target='_blank'
-              className="transition-all text-[#ff2d78] hover:scale-125 duration-300"
-            >
-              <FaFacebook size={30} />
-            </Link>
-            <Link
-              href={personalData.twitter}
-              target='_blank'
-              className="transition-all text-[#ff2d78] hover:scale-125 duration-300"
-            >
-              <FaTwitterSquare size={30} />
-            </Link>
-          </div>
+          <h2 className="hero-fade-up hero-delay-2 text-xl lg:text-2xl font-semibold mb-5 text-transparent bg-clip-text bg-gradient-to-r from-[#ff2d78] via-[#8b2cff] to-[#00e5ff]">
+            WordPress Developer &amp; Frontend Engineer
+          </h2>
 
-          <div className="flex items-center gap-3">
-            <Link href="#contact" className="bg-gradient-to-r to-[#ff2d78] from-[#7000ff] p-[1px] rounded-full transition-all duration-300 hover:from-[#ff2d78] hover:to-[#7000ff]">
-              <button className="px-3 text-xs md:px-8 py-3 md:py-4 bg-[#07070f] rounded-full border-none text-center md:text-sm font-medium uppercase tracking-wider text-[#ffff] no-underline transition-all duration-200 ease-out  md:font-semibold flex items-center gap-1 hover:gap-3">
-                <span>Contact me</span>
+          {/* Subtitle */}
+          <p className="hero-fade-up hero-delay-3 text-[#a1a1aa] text-sm lg:text-base leading-relaxed max-w-lg mb-8">
+            I build custom WordPress themes, Elementor widgets, WooCommerce systems, API integrations, and interactive frontend experiences with clean, scalable code.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="hero-fade-up hero-delay-4 flex items-center gap-4 mb-8 flex-wrap">
+            <Link href="#projects"
+              className="hero-btn-primary group relative flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white overflow-hidden transition-all duration-300">
+              <span className="relative z-10 flex items-center gap-2">
                 <RiContactsFill size={16} />
-              </button>
+                View My Work
+              </span>
             </Link>
 
-            <Link className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-[#ff2d78] to-[#7000ff] px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold" role="button" target="_blank" href={personalData.resume}
-            >
-              <span>Get Resume</span>
+            <Link href={personalData.resume || '#'} target="_blank"
+              className="hero-btn-secondary group flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-300">
               <MdDownload size={16} />
+              Download Resume
             </Link>
           </div>
 
-        </div>
-        <div className="order-1 lg:order-2 from-[#07070f] border-[#1a1a3e80] relative rounded-lg border bg-gradient-to-r to-[#0e0e1f]">
-          <div className="flex flex-row">
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#ff2d78] to-[#7000ff]"></div>
-            <div className="h-[1px] w-full bg-gradient-to-r from-[#7000ff] to-transparent"></div>
+          {/* Skill Badges */}
+          <div className="hero-fade-up hero-delay-5 flex flex-wrap gap-2 mb-8">
+            {skillBadges.map((badge) => (
+              <span key={badge} className="hero-badge text-xs font-medium px-3 py-1.5 rounded-full transition-all duration-300">
+                {badge}
+              </span>
+            ))}
           </div>
-          <div className="px-4 lg:px-8 py-5">
-            <div className="flex flex-row space-x-2">
-              <div className="h-3 w-3 rounded-full bg-red-400"></div>
-              <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-              <div className="h-3 w-3 rounded-full bg-green-200"></div>
+
+          {/* Social Icons */}
+          <div className="hero-fade-up hero-delay-5 flex items-center gap-3">
+            {[
+              { href: personalData.github, icon: <BsGithub size={18} />, label: 'GitHub' },
+              { href: personalData.linkedIn, icon: <BsLinkedin size={18} />, label: 'LinkedIn' },
+              { href: personalData.facebook, icon: <FaFacebook size={18} />, label: 'Facebook' },
+              { href: personalData.twitter, icon: <FaTwitterSquare size={18} />, label: 'Twitter' },
+            ].map(({ href, icon, label }) => (
+              <Link key={label} href={href} target="_blank" aria-label={label}
+                className="hero-social-icon flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300">
+                {icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* ── RIGHT SIDE — Code Card ── */}
+        <div className="order-1 lg:order-2 hero-fade-right">
+          <div className="hero-code-card relative rounded-xl border border-[#1a1a3e] overflow-hidden">
+
+            {/* Glow behind card */}
+            <div className="absolute inset-0 pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(0,229,255,0.07) 0%, transparent 70%)' }} />
+
+            {/* Card top bar */}
+            <div className="flex flex-row">
+              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#ff2d78] to-[#8b2cff]"></div>
+              <div className="h-[1px] w-full bg-gradient-to-r from-[#8b2cff] to-transparent"></div>
+            </div>
+
+            {/* Mac dots */}
+            <div className="flex items-center gap-2 px-4 lg:px-6 py-4 border-b border-[#1a1a3e]">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
+              <span className="ml-3 text-xs text-[#a1a1aa] font-mono">developer.js</span>
+            </div>
+
+            {/* Code block */}
+            <div className="px-4 lg:px-8 py-6">
+              <code className="font-mono text-xs md:text-sm lg:text-[0.85rem] leading-relaxed block">
+
+                <div className="code-line">
+                  <span className="code-keyword">const </span>
+                  <span className="code-var">developer</span>
+                  <span className="code-punct"> = </span>
+                  <span className="code-punct">{'{'}</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">name</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-string">&apos;Sabbir Ahmed&apos;</span>
+                  <span className="code-punct">,</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">role</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-string">&apos;Web Application Developer&apos;</span>
+                  <span className="code-punct">,</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">focus</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-punct">[</span>
+                  <span className="code-string">&apos;WordPress&apos;</span>
+                  <span className="code-punct">, </span>
+                  <span className="code-string">&apos;ReactJS&apos;</span>
+                  <span className="code-punct">, </span>
+                  <span className="code-string">&apos;NextJS&apos;</span>
+                  <span className="code-punct">,</span>
+                </div>
+
+                <div className="code-line pl-10">
+                  <span className="code-string">&apos;NodeJS&apos;</span>
+                  <span className="code-punct">, </span>
+                  <span className="code-string">&apos;Supabase&apos;</span>
+                  <span className="code-punct">, </span>
+                  <span className="code-string">&apos;WooCommerce&apos;</span>
+                  <span className="code-punct">, </span>
+                  <span className="code-string">&apos;GSAP&apos;</span>
+                  <span className="code-punct">],</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">experience</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-string">&apos;10+ years&apos;</span>
+                  <span className="code-punct">,</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">availableForWork</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-bool">true</span>
+                  <span className="code-punct">,</span>
+                </div>
+
+                <div className="code-line pl-6">
+                  <span className="code-key">build</span>
+                  <span className="code-punct">: </span>
+                  <span className="code-keyword">() </span>
+                  <span className="code-punct">{'=> '}</span>
+                  <span className="code-string">&apos;Fast &amp; scalable websites&apos;</span>
+                </div>
+
+                <div className="code-line">
+                  <span className="code-punct">{'};'}</span>
+                </div>
+
+                {/* blinking cursor */}
+                <div className="code-line mt-2">
+                  <span className="code-comment">{'// '}</span>
+                  <span className="code-comment">Currently building something awesome</span>
+                  <span className="hero-cursor">|</span>
+                </div>
+
+              </code>
             </div>
           </div>
-          <div className="overflow-hidden border-t-[2px] border-[#1a1a3e] px-4 lg:px-8 py-4 lg:py-8">
-            <code className="font-mono text-xs md:text-sm lg:text-base">
-              <div className="blink">
-                <span className="mr-2 text-[#ff2d78]">const</span>
-                <span className="mr-2 text-white">coder</span>
-                <span className="mr-2 text-[#ff2d78]">=</span>
-                <span className="text-gray-400">{'{'}</span>
+
+          {/* Stats row below code card */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+            {stats.map(({ value, label }) => (
+              <div key={label}
+                className="hero-stat-card flex flex-col items-center justify-center py-3 px-2 rounded-xl border border-[#1a1a3e] bg-[#0e0e1f]/60 backdrop-blur-sm text-center">
+                <span className="text-[#00f0ff] font-bold text-sm lg:text-base">{value}</span>
+                <span className="text-[#a1a1aa] text-[10px] lg:text-xs mt-0.5 leading-tight">{label}</span>
               </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-                <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Sabbir Ahmed</span>
-                <span className="text-gray-400">{`',`}</span>
-              </div>
-              <div className="ml-4 lg:ml-8 mr-2">
-                <span className=" text-white">skills:</span>
-                <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">WordPress</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">PHP</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Elementor</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">WooCommerce</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">JavaScript</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">GSAP</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">REST API</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Docker</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Make.com</span>
-                <span className="text-gray-400">{"'],"}</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>
-                <span className="text-orange-400">true</span>
-                <span className="text-gray-400">,</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">quickLearner:</span>
-                <span className="text-orange-400">true</span>
-                <span className="text-gray-400">,</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-white">problemSolver:</span>
-                <span className="text-orange-400">true</span>
-                <span className="text-gray-400">,</span>
-              </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2 text-green-400">hireable:</span>
-                <span className="text-orange-400">function</span>
-                <span className="text-gray-400">{'() {'}</span>
-              </div>
-              <div>
-                <span className="ml-8 lg:ml-16 mr-2 text-orange-400">return</span>
-                <span className="text-gray-400">{`(`}</span>
-              </div>
-              <div>
-                <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-                <span className="mr-2 text-white">hardWorker</span>
-                <span className="text-amber-300">&amp;&amp;</span>
-              </div>
-              <div>
-                <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-                <span className="mr-2 text-white">problemSolver</span>
-                <span className="text-amber-300">&amp;&amp;</span>
-              </div>
-              <div>
-                <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
-                <span className="mr-2 text-white">skills.length</span>
-                <span className="mr-2 text-amber-300">&gt;=</span>
-                <span className="text-orange-400">5</span>
-              </div>
-              <div><span className="ml-8 lg:ml-16 mr-2 text-gray-400">{`);`}</span></div>
-              <div><span className="ml-4 lg:ml-8 text-gray-400">{`};`}</span></div>
-              <div><span className="text-gray-400">{`};`}</span></div>
-            </code>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );

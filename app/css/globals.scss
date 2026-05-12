@@ -47,3 +47,168 @@ h1, h2, h3, h4, h5, h6 {
   // padding-top: calc(var(--index) * 2.5rem);
   top: calc(var(--index) * 4rem);
 }
+
+/* ============================================================
+   HERO SECTION — MIDNIGHT NEON
+   ============================================================ */
+
+/* Fade-up animation */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating animation for code card */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Cursor blink */
+@keyframes heroBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Fade from right */
+@keyframes heroFadeRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply animations */
+.hero-fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.7s ease forwards;
+}
+.hero-fade-right {
+  opacity: 0;
+  animation: heroFadeRight 0.8s ease 0.3s forwards;
+}
+
+.hero-delay-0 { animation-delay: 0s; }
+.hero-delay-1 { animation-delay: 0.1s; }
+.hero-delay-2 { animation-delay: 0.25s; }
+.hero-delay-3 { animation-delay: 0.4s; }
+.hero-delay-4 { animation-delay: 0.55s; }
+.hero-delay-5 { animation-delay: 0.7s; }
+
+/* Floating code card */
+.hero-code-card {
+  background: linear-gradient(135deg, #0a0a18 0%, #0e0e1f 100%);
+  animation: heroFloat 5s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.06), 0 0 80px rgba(139, 44, 255, 0.04);
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 0 60px rgba(0, 229, 255, 0.12), 0 0 100px rgba(139, 44, 255, 0.08);
+  }
+}
+
+/* Name gradient */
+.hero-name-gradient {
+  background: linear-gradient(90deg, #ff2d78 0%, #8b2cff 50%, #00e5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary CTA button */
+.hero-btn-primary {
+  background: linear-gradient(135deg, #ff2d78 0%, #8b2cff 50%, #00e5ff 100%);
+  box-shadow: 0 0 20px rgba(255, 45, 120, 0.3);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #00e5ff 0%, #8b2cff 50%, #ff2d78 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: inherit;
+  }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(255, 45, 120, 0.5), 0 0 15px rgba(0, 229, 255, 0.3);
+    &::before { opacity: 1; }
+  }
+  &:active { transform: translateY(0); }
+}
+
+/* Secondary CTA button */
+.hero-btn-secondary {
+  background: transparent;
+  border: 1px solid #1a1a3e;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,45,120,0.15) 0%, rgba(139,44,255,0.15) 50%, rgba(0,229,255,0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  &:hover {
+    border-color: #ff2d78;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 45, 120, 0.2);
+    &::before { opacity: 1; }
+  }
+  &:active { transform: translateY(0); }
+}
+
+/* Skill badges — glassmorphism */
+.hero-badge {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  backdrop-filter: blur(8px);
+  &:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.3);
+    color: #00e5ff;
+    transform: translateY(-2px);
+  }
+}
+
+/* Social icon — glass circular */
+.hero-social-icon {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ff2d78;
+  backdrop-filter: blur(8px);
+  &:hover {
+    background: linear-gradient(135deg, #ff2d78, #8b2cff);
+    border-color: transparent;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 45, 120, 0.3);
+  }
+}
+
+/* Stat cards */
+.hero-stat-card {
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: rgba(0, 229, 255, 0.25);
+    background: rgba(0, 229, 255, 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+/* Code syntax colors */
+.code-line { display: block; line-height: 1.8; }
+.code-keyword { color: #ff2d78; }
+.code-var     { color: #e5e7eb; }
+.code-punct   { color: #6b7280; }
+.code-key     { color: #a5b4fc; }
+.code-string  { color: #fbbf24; }
+.code-bool    { color: #00e5ff; }
+.code-comment { color: #4b5563; font-style: italic; }
+
+/* Blinking cursor */
+.hero-cursor {
+  color: #00e5ff;
+  animation: heroBlink 1s step-end infinite;
+  margin-left: 2px;
+}
