@@ -1,9 +1,12 @@
-// @flow strict
 'use client';
+// @flow strict
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+
+// Icons that are dark-coloured and need brightening on the dark background
+const DARK_ICONS = ['nextjs', 'php', 'git'];
 
 function Skills() {
   return (
@@ -32,8 +35,8 @@ function Skills() {
         </div>
       </div>
 
-      {/* Marquee — intentionally full-width, py-6 gives room for scale */}
-      <div className="w-full py-6 overflow-x-hidden">
+      {/* Marquee — capped at site max-width so ultra-wide displays don't split it */}
+      <div className="mx-auto w-full py-6 overflow-x-hidden" style={{ maxWidth: "2400px" }}>
       <Marquee
         gradient={false}
         speed={60}
@@ -77,7 +80,7 @@ function Skills() {
                     alt={skill}
                     width={36}
                     height={36}
-                    className="h-full w-auto object-contain"
+                    className={`h-full w-auto object-contain${DARK_ICONS.includes(skill.toLowerCase()) ? ' icon-on-dark' : ''}`}
                   />
                 ) : (
                   <span className="flex items-center justify-center h-full w-full text-[#00e5ff] text-xs font-bold font-mono rounded-md"

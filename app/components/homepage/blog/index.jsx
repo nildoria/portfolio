@@ -5,7 +5,7 @@ import BlogCard from './blog-card';
 
 function Blog({ blogs }) {
   return (
-    <div id='blogs' className="relative z-50 border-t my-12 lg:my-24 border-[#1a1a3e] w-full">
+    <div id='blog' className="relative z-50 border-t my-12 lg:my-24 border-[#1a1a3e] w-full">
 
       {/* Background glow */}
       <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] rounded-full pointer-events-none"
@@ -31,8 +31,7 @@ function Blog({ blogs }) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-8">
           {blogs.slice(0, 6).map((blog, i) => (
-            blog?.cover_image &&
-            <BlogCard blog={blog} key={i} />
+            <BlogCard blog={blog} key={blog?.id || i} />
           ))}
         </div>
 

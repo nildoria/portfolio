@@ -9,21 +9,16 @@ import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
 
 async function getData() {
-  if (!personalData.devUsername) {
+  try {
+    const res = await fetch(
+      'https://wpkiddie.com/wp-json/wp/v2/posts?per_page=6&_embed=true',
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
     return [];
   }
-
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  const data = await res.json();
-
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
 };
 
 export default async function Home() {

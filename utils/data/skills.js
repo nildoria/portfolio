@@ -2,6 +2,8 @@ export const skillsData = [
   'Wordpress',
   'PHP',
   'Javascript',
+  'ReactJS',
+  'NextJS',
   'HTML',
   'CSS',
   'jQuery',
@@ -12,7 +14,6 @@ export const skillsData = [
   'Figma',
   'Bootstrap',
   'Photoshop',
-  'Ubuntu',
 ]
 
 // Skills are matched to icons available in the portfolio icon set.

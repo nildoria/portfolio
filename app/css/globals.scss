@@ -16,10 +16,24 @@
   overflow-x: unset !important;
 }
 
+/* Dark-coloured skill icons: make them light ash so they're visible on dark bg */
+.icon-on-dark {
+  filter: brightness(0) invert(0.75);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset scroll targets so fixed navbar doesn't cover them */
+#about, #experience, #skills, #projects, #contact, #blog {
+  scroll-margin-top: 80px;
 }
 
 body {

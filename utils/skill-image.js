@@ -25,6 +25,7 @@ import flutter from '../app/assets/svg/skills/flutter.svg';
 import gcp from '../app/assets/svg/skills/gcp.svg';
 import gimp from '../app/assets/svg/skills/gimp.svg';
 import git from '../app/assets/svg/skills/git.svg';
+import jquery from '../app/assets/svg/skills/jquery.svg';
 import go from '../app/assets/svg/skills/go.svg';
 import graphql from '../app/assets/svg/skills/graphql.svg';
 import haxe from '../app/assets/svg/skills/haxe.svg';
@@ -109,10 +110,12 @@ export const skillsImage = (skill) => {
     case 'javascript':
       return javascript;
     case 'next js':
+    case 'nextjs':
       return nextJS;
     case 'nuxt js':
       return nuxtJS;
     case 'react':
+    case 'reactjs':
       return react;
     case 'svelte':
       return svelte;
@@ -184,6 +187,8 @@ export const skillsImage = (skill) => {
       return gimp;
     case 'git':
       return git;
+    case 'jquery':
+      return jquery;
     case 'graphql':
       return graphql;
     case 'lightroom':
