@@ -39,6 +39,7 @@ const CHECKS = [
   ['mid', 'sunken', 4.5, 'body on band'],
   ['low', 'sunken', 4.5, 'meta on band'],
   ['accent', 'sunken', 4.5, 'links on band'],
+  ['accent', 'surface', 4.5, 'links on card'],
   ['bg', 'accent', 4.5, 'primary button label'],
   ['line-input', 'bg', 3.0, 'input border on page'],
   ['line-input', 'surface', 3.0, 'input border on card'],
