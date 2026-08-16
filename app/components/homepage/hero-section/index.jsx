@@ -4,6 +4,7 @@ import Link from "next/link";
 const SOCIALS = [
   { href: personalData.github, label: "GitHub" },
   { href: personalData.linkedIn, label: "LinkedIn" },
+  { href: personalData.facebook, label: "Facebook" },
   { href: personalData.twitter, label: "X" },
 ];
 

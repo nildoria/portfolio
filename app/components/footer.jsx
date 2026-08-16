@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { personalData } from "@/utils/data/personal-data";
 
 const LINKS = [
-  { href: "https://github.com/nildoria", label: "GitHub" },
-  { href: "https://www.linkedin.com/in/sabbir-ahmed-pix", label: "LinkedIn" },
-  { href: "https://x.com/SabbirPixiefy", label: "X" },
+  { href: personalData.github, label: "GitHub" },
+  { href: personalData.linkedIn, label: "LinkedIn" },
+  { href: personalData.facebook, label: "Facebook" },
+  { href: personalData.twitter, label: "X" },
 ];
 
 function Footer() {
@@ -14,7 +16,7 @@ function Footer() {
           © {new Date().getFullYear()} Sabbir Ahmed
         </p>
         <div className="flex items-center gap-6">
-          {LINKS.map(({ href, label }) => (
+          {LINKS.filter((l) => l.href).map(({ href, label }) => (
             <Link
               key={href}
               href={href}
