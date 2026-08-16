@@ -43,6 +43,8 @@ const CHECKS = [
   ['bg', 'accent', 4.5, 'primary button label'],
   ['line-input', 'bg', 3.0, 'input border on page'],
   ['line-input', 'surface', 3.0, 'input border on card'],
+  ['danger', 'bg', 4.5, 'error text on page'],
+  ['danger', 'surface', 4.5, 'error text on card'],
 ];
 
 let css;

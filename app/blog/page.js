@@ -1,6 +1,5 @@
 // @flow strict
 import BlogCard from '../components/homepage/blog/blog-card';
-import SectionHeader from '../components/helper/section-header';
 import Link from 'next/link';
 import { FaArrowLeft } from 'react-icons/fa';
 
@@ -33,7 +32,12 @@ async function BlogPage() {
           <FaArrowLeft size={10} /> Back to Portfolio
         </Link>
 
-        <SectionHeader index="05" label="Writing" title="All articles" />
+        <div className="mb-12">
+          <span className="block text-xs uppercase tracking-[0.12em] text-low">Writing</span>
+          <h1 className="mt-4 text-[2rem] leading-[1.15] tracking-[-0.01em] text-hi">
+            All articles
+          </h1>
+        </div>
 
         {blogs.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 gap-4">

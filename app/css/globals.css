@@ -15,11 +15,7 @@
 
   --color-accent:       #7C9CC4;
   --color-accent-hover: #93AFD2;
-}
-
-:root {
-  /* Non-hex on purpose: subtle fills only, never text or focus rings. */
-  --color-accent-dim: rgb(124 156 196 / 0.12);
+  --color-danger:       #D98A8A;
 }
 
 html {

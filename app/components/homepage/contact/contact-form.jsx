@@ -86,7 +86,7 @@ function ContactForm() {
           }}
         />
         {error.email && (
-          <p className="mt-1 text-xs text-accent">Please provide a valid email</p>
+          <p className="mt-1 text-xs text-danger">Please provide a valid email</p>
         )}
       </div>
 
@@ -112,7 +112,7 @@ function ContactForm() {
       {/* Error + Submit */}
       <div className="flex flex-col gap-3">
         {error.required && (
-          <p className="text-xs text-accent">All fields are required</p>
+          <p className="text-xs text-danger">All fields are required</p>
         )}
         <button
           onClick={handleSendMail}
