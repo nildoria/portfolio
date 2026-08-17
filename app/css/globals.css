@@ -60,6 +60,29 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 80px;
 }
 
+/* Hero stack diagram. Pointing at one layer recedes the others, so the
+   path you're inspecting reads clearly. Colour and opacity only — no
+   movement — and no JavaScript, so the hero stays a server component. */
+.stack-layer {
+  transition: opacity 150ms ease, border-color 150ms ease;
+}
+
+.stack-diagram:has(.stack-layer:hover) .stack-layer:not(:hover) {
+  opacity: 0.45;
+}
+
+.stack-layer:hover {
+  border-color: var(--color-accent);
+}
+
+.stack-layer:hover .stack-title {
+  color: var(--color-hi);
+}
+
+.stack-layer:hover .stack-items {
+  color: var(--color-mid);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

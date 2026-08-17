@@ -1,6 +1,6 @@
 import { personalData } from "@/utils/data/personal-data";
 import Link from "next/link";
-import GridField from "./grid-field";
+import StackDiagram from "./stack-diagram";
 
 const SOCIALS = [
   { href: personalData.github, label: "GitHub" },
@@ -62,10 +62,10 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative, cursor-driven. Hidden below lg — the mobile hero is
-          single-column and has no empty space to fill. */}
+      {/* Hidden below lg — the mobile hero is single-column, and section 02
+          carries the full skills list for those readers. */}
       <div className="hidden lg:block">
-        <GridField />
+        <StackDiagram />
       </div>
     </section>
   );
