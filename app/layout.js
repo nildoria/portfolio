@@ -5,8 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
-import "./css/card.scss";
-import "./css/globals.scss";
+import "./css/globals.css";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -37,20 +36,14 @@ export const metadata = {
     title: "Sabbir Ahmed - WordPress Developer & Web Developer",
     description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
     siteName: "Sabbir Ahmed Portfolio",
-    images: [
-      {
-        url: "/profile.png",
-        width: 1200,
-        height: 630,
-        alt: "Sabbir Ahmed - WordPress Developer",
-      },
-    ],
+    // No `images` here on purpose: app/opengraph-image.png is a Next file
+    // convention and overrides this key, so declaring it twice only lets the
+    // two drift apart. The convention emits the correct dimensions itself.
   },
   twitter: {
     card: "summary_large_image",
     title: "Sabbir Ahmed - WordPress Developer & Web Developer",
     description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
-    images: ["/profile.png"],
     creator: "@SabbirPixiefy",
   },
 };
@@ -61,7 +54,7 @@ export default function RootLayout({ children }) {
       <body className={`${bricolage.variable} ${hanken.variable}`}>
         <ToastContainer />
         <Navbar />
-        <main className="min-h-screen relative w-full text-white pt-[68px]">
+        <main className="min-h-screen relative w-full pt-16">
           {children}
           <ScrollToTop />
         </main>

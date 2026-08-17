@@ -1,26 +1,8 @@
-const path = require('path')
- 
 module.exports = {
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-  },
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media.dev.to',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media2.dev.to',
-        pathname: '**',
-      },
+      // Blog featured images. This is the only remote host the site loads
+      // from — the template's Cloudinary and dev.to entries were unused.
       {
         protocol: 'https',
         hostname: 'wpkiddie.com',
