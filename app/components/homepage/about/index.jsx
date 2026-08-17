@@ -21,9 +21,19 @@ function AboutSection() {
             {personalData.designation}
           </h2>
 
-          <p className="mt-6 text-[1.0625rem] leading-[1.65] text-mid">
-            {personalData.description}
-          </p>
+          {/* Prose is left-aligned inside the centred column. Centring reads
+              fine for two or three lines, but not for three paragraphs — the
+              ragged left edge makes each line harder to find. */}
+          <div className="mt-8 space-y-4 text-left">
+            {personalData.description.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 32)}
+                className="text-[1.0625rem] leading-[1.65] text-mid"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

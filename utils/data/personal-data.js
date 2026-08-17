@@ -3,7 +3,12 @@ export const personalData = {
   profile: '/profile.png',
   designation: "WordPress Developer & Web Developer",
   tagline: "Ten years deep in WordPress, now building with React and Next.js. I work where the two meet — headless builds, custom plugins, and WooCommerce stores.",
-  description: "I am a skilled WordPress and Web Developer with experience in creating custom websites, plugins, Elementor widgets, WooCommerce solutions, and advanced frontend animations. I work with businesses and agencies to build reliable, responsive, and user-friendly websites that are easy to manage and optimized for performance. My development approach focuses on clean code, accurate design implementation, smooth user experience, and practical business functionality.",
+  // Rendered as separate paragraphs in the About section.
+  description: [
+    "Most of my work starts the same way: a WordPress site has grown past what it was built for. Slow checkout, a theme nobody wants to touch, a plugin doing three jobs badly.",
+    "I take those apart and rebuild them properly — custom themes with real architecture, WooCommerce tuned for how the store actually sells, and Elementor widgets that give designers room without leaving a mess behind.",
+    "When a project needs more than PHP can give it, I build the frontend in React or Next.js and let WordPress do what it is genuinely good at: managing content.",
+  ],
   email: 'sabbir@pixiefy.com',
   phone: '+8801703247842',
   address: 'Dhanmondi, Dhaka, Bangladesh - 1209',
