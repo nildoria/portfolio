@@ -36,20 +36,14 @@ export const metadata = {
     title: "Sabbir Ahmed - WordPress Developer & Web Developer",
     description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
     siteName: "Sabbir Ahmed Portfolio",
-    images: [
-      {
-        url: "/profile.png",
-        width: 1200,
-        height: 630,
-        alt: "Sabbir Ahmed - WordPress Developer",
-      },
-    ],
+    // No `images` here on purpose: app/opengraph-image.png is a Next file
+    // convention and overrides this key, so declaring it twice only lets the
+    // two drift apart. The convention emits the correct dimensions itself.
   },
   twitter: {
     card: "summary_large_image",
     title: "Sabbir Ahmed - WordPress Developer & Web Developer",
     description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
-    images: ["/profile.png"],
     creator: "@SabbirPixiefy",
   },
 };

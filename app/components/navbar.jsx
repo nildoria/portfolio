@@ -30,10 +30,20 @@ function Navbar() {
       <div className="container-page flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight text-hi"
+          aria-label="Sabbir Ahmed — home"
+          className="group flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          Sabbir Ahmed
+          <span
+            aria-hidden="true"
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-accent text-[0.6875rem] font-bold tracking-tight text-accent transition-colors duration-150 group-hover:bg-accent group-hover:text-bg"
+          >
+            SA
+          </span>
+          <span className="text-base tracking-tight">
+            <span className="font-semibold text-hi">Sabbir</span>
+            <span className="font-normal text-mid"> Ahmed</span>
+          </span>
         </Link>
 
         {/* Desktop links */}

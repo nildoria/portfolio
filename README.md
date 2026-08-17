@@ -60,7 +60,7 @@ Copy `.env.example` to `.env.local` and fill in what you need. Every variable is
 | `NEXT_PUBLIC_GTM` | Google Tag Manager | Omit to disable analytics |
 | `TELEGRAM_BOT_TOKEN` | Contact form → Telegram | From @BotFather |
 | `TELEGRAM_CHAT_ID` | Contact form → Telegram | Destination chat |
-| `NEXT_PUBLIC_RECAPTCHA_SECRET_KEY` | Contact form spam filtering | |
+| `RECAPTCHA_SECRET_KEY` | Contact form spam filtering | Server-side only. Deliberately **not** `NEXT_PUBLIC_` — that prefix inlines a value into the client bundle. |
 
 Never commit `.env.local`. It is already gitignored.
 
