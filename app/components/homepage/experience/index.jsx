@@ -8,7 +8,7 @@ function Experience() {
         <SectionHeader
           index="01"
           label="Experience"
-          title="Ten years of WordPress and frontend work"
+          title="Building for agencies and direct clients"
         />
 
         <ul className="border-t border-line">

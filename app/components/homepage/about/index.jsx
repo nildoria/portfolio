@@ -18,7 +18,7 @@ function AboutSection() {
           />
 
           <h2 className="mt-8 text-[2rem] leading-[1.15] tracking-[-0.01em] text-hi">
-            {personalData.designation}
+            How I work
           </h2>
 
           {/* Prose is left-aligned inside the centred column. Centring reads
