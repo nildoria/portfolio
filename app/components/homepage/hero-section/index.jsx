@@ -23,9 +23,8 @@ function HeroSection() {
             .replace(/\b\w/g, (c) => c.toUpperCase())}
         </h1>
 
-        <p className="mt-6 max-w-[46ch] text-[1.0625rem] leading-[1.65] text-mid">
-          WordPress &amp; Frontend Engineer building custom themes, WooCommerce
-          systems, and Elementor tooling.
+        <p className="mt-6 max-w-[52ch] text-[1.0625rem] leading-[1.65] text-mid">
+          {personalData.tagline}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-6">
