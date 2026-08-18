@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sabbir Ahmed - Full-Stack Product Engineer - CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ATS build: single column, no images, no multi-column layout, no tables,
+     no icons. Every heading is a conventional CV heading so a parser maps it
+     to the right field. Typography and spacing still get proper attention. */
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"Inter",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#15181d;
+    font-size:9.8pt;
+    line-height:1.42;
+  }
+  @page{ size:A4; margin:12mm 13mm; }
+
+  a{color:#15181d;text-decoration:none;}
+
+  h1{
+    font-size:18pt;font-weight:700;letter-spacing:-.02em;
+    margin:0 0 2px;line-height:1.1;
+  }
+  .role{font-size:11pt;font-weight:600;margin:0 0 5px;}
+  .contact{margin:0;font-size:9.2pt;line-height:1.45;}
+
+  h2{
+    font-size:9.8pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    margin:13px 0 6px;padding-bottom:3px;border-bottom:1px solid #c9ced6;
+    break-after:avoid;page-break-after:avoid;
+  }
+
+  .entry{margin-bottom:9px;break-inside:avoid;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-title{font-size:10.2pt;font-weight:600;margin:0;}
+  .entry-meta{font-size:9.4pt;margin:1px 0 0;}
+
+  ul{margin:4px 0 0;padding-left:16px;}
+  li{margin-bottom:2px;}
+
+  p.summary{margin:7px 0 0;font-size:9.8pt;line-height:1.48;}
+  p.skills-line{margin:0 0 3px;font-size:9.6pt;line-height:1.45;}
+  p.skills-line:last-child{margin-bottom:0;}
+  .cat{font-weight:600;}
+</style>
+</head>
+<body>
+
+  <h1>Sabbir Ahmed</h1>
+  <p class="role">Full-Stack Product Engineer</p>
+  <p class="contact">
+    Email: sabbir@pixiefy.com | Phone: +880 1703 247842 | Location: Dhanmondi, Dhaka, Bangladesh<br>
+    Website: https://sabbir.bd | GitHub: https://github.com/nildoria | LinkedIn: https://www.linkedin.com/in/sabbir-ahmed-pix
+  </p>
+
+  <h2>Professional Summary</h2>
+  <p class="summary">
+    Full-stack engineer who ships production web applications end to end: React and TypeScript interfaces,
+    Node and Express APIs, and PostgreSQL schemas with access enforced at the database rather than in
+    application code. Ten years of WordPress, WooCommerce and Elementor delivery underneath, covering custom
+    plugin architecture, headless builds, store customisation, performance and technical SEO remediation, and
+    hosting through launch.
+  </p>
+
+  <h2>Professional Experience</h2>
+
+  <div class="entry">
+    <p class="entry-title">Full-Stack Product Engineer</p>
+    <p class="entry-meta">Self-Employed and Agency Projects | 2021 - Present</p>
+    <ul>
+      <li>Ship production web applications end to end: React and TypeScript interfaces, Node and Express APIs, and PostgreSQL schemas, deployed on Cloudflare Pages and Fly.io.</li>
+      <li>Implement authentication and authorisation with OAuth 2.0, JWT sessions and PostgreSQL Row-Level Security, enforcing tenant isolation at the database rather than in application code.</li>
+      <li>Integrate third-party platform APIs including the Gmail API, Stripe payments, and Google Cloud Pub/Sub webhooks with OIDC verification, with background workers handling renewal and reconciliation.</li>
+      <li>Optimise delivery performance using sharded in-memory caches, tag-based revalidation and cache-warming endpoints so generated pages serve primed rather than cold.</li>
+      <li>Build AI-assisted features with OpenAI embeddings and retrieval-augmented generation, combining keyword and vector search behind swappable provider interfaces.</li>
+      </ul>
+  </div>
+
+  <div class="entry">
+    <p class="entry-title">WooCommerce and Elementor Specialist</p>
+    <p class="entry-meta">Freelance / Remote Clients | 2019 - Present</p>
+    <ul>
+      <li>Customised WooCommerce stores across product archives, single-product layouts, cart and checkout flows, custom order statuses, and packing slip and invoice output.</li>
+      <li>Implemented AJAX cart updates, custom pricing rules, subscription display adjustments, product limit logic and affiliate product flows for live commercial stores.</li>
+      <li>Built reusable Elementor-compatible animation widgets with GSAP and ScrollTrigger, including pinned and horizontal scroll sections, SVG draw, image reveal and text animation.</li>
+      <li>Integrated client websites with Make.com, Zapier, Slack, Calendly and CRM lead-submission flows over REST APIs and webhooks.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <p class="entry-title">WordPress Engineer</p>
+    <p class="entry-meta">Pixiefy | 2015 - Present</p>
+    <ul>
+      <li>Developed custom WordPress plugins with organised, maintainable architecture, including Elementor widget registration, admin settings pages, asset enqueueing, AJAX endpoints and WooCommerce integration.</li>
+      <li>Troubleshot plugin conflicts, caching and NitroPack issues, duplicate URLs and Google Search Console errors; improved Core Web Vitals and technical SEO across client sites.</li>
+      <li>Managed hosting and launches end to end: VPS and Ubuntu server setup, Nginx reverse proxy, SSL provisioning, Cloudflare configuration, DNS records (MX, TXT, SPF, DKIM, CNAME), domain pointing and migration.</li>
+      <li>Delivered accurate design-to-web implementation with responsive layouts and cross-device quality assurance.</li>
+    </ul>
+  </div>
+
+  <h2>Selected Projects</h2>
+
+  <div class="entry">
+    <p class="entry-title">Pinbox - Shared Inbox for Teams</p>
+    <p class="entry-meta">Full-Stack Product Engineer | https://pinbox.pages.dev</p>
+    <ul>
+      <li>Multi-tenant team inbox with workspace isolation enforced by PostgreSQL Row-Level Security on every read and write.</li>
+      <li>Gmail push notifications delivered through Cloud Pub/Sub webhooks with OIDC verification; background workers renew watches and reconcile state.</li>
+      <li>Rich-text composer sanitised with DOMPurify, closing the cross-site scripting surface that contentEditable email editing opens.</li>
+      <li>Technologies: React, TypeScript, TanStack Query, Node.js, Express, Gmail API, OAuth 2.0, PostgreSQL, Supabase, Cloudflare Pages, Fly.io.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <p class="entry-title">Lineflow - Headless WordPress Storefront</p>
+    <p class="entry-meta">Full-Stack Engineer | https://catalog.allaround.co.il | https://github.com/nildoria/lineflow</p>
+    <ul>
+      <li>Next.js storefront over headless WordPress, with the REST API proxied server-side so WordPress credentials never reach the client.</li>
+      <li>Stripe payment intents and webhooks for checkout, Cloudinary uploads, and a dedicated PostgreSQL layer with its own versioned migrations.</li>
+      <li>Sharded in-memory slug index behind the framework cache with tag-based revalidation and warm endpoints, so generated pages serve primed rather than cold. Built right-to-left aware; the deployed instance runs in Hebrew.</li>
+      <li>Technologies: Next.js, React, headless WordPress, PostgreSQL, Stripe, Cloudinary, JWT authentication, Zod, Zustand, Radix UI, Tailwind CSS.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <p class="entry-title">Knowli - AI Support Chatbot for WordPress</p>
+    <p class="entry-meta">Plugin Architect | https://github.com/nildoria/knowli</p>
+    <ul>
+      <li>WordPress-native RAG chatbot across three plugins; indexes pages, posts, products and PDFs, then answers from that content with citations rather than unsourced generation.</li>
+      <li>Hybrid retrieval combining BM25 and keyword providers with cosine similarity over 1536-dimension OpenAI embeddings, behind search and answer interfaces so either half can be swapped independently.</li>
+      <li>Confidence scorer gates answering versus handoff; intent and emotion detection shape response tone. PSR-4 architecture with versioned schema migrations.</li>
+      <li>Technologies: PHP, WordPress, OpenAI API, RAG, vector search, BM25, MySQL, PSR-4, Composer.</li>
+    </ul>
+  </div>
+
+  <h2>Technical Skills</h2>
+  <p class="skills-line"><span class="cat">Frontend:</span> React, TypeScript, Next.js, TanStack Query, TanStack Router, Tailwind CSS, Vite, GSAP, HTML5, CSS3, JavaScript</p>
+  <p class="skills-line"><span class="cat">Backend and APIs:</span> Node.js, Express, PHP, REST APIs, webhooks, Gmail API, OAuth 2.0, Google Cloud Pub/Sub, background jobs</p>
+  <p class="skills-line"><span class="cat">Databases:</span> PostgreSQL, Row-Level Security, advanced SQL, schema design, migrations, MySQL</p>
+  <p class="skills-line"><span class="cat">WordPress and E-commerce:</span> WordPress, WooCommerce, Elementor, Elementor Pro, custom themes, plugin development, Advanced Custom Fields, Oxygen Builder, headless WordPress</p>
+  <p class="skills-line"><span class="cat">AI and Automation:</span> OpenAI API, retrieval-augmented generation, vector search, BM25, Make.com, Zapier, n8n, Lovable</p>
+  <p class="skills-line"><span class="cat">Security:</span> JWT and session handling, least-privilege access, HTML sanitisation, cross-site scripting prevention, secret management</p>
+  <p class="skills-line"><span class="cat">Hosting, Deployment and DevOps:</span> Cloudflare, Fly.io, Supabase, Docker, Nginx, VPS, Ubuntu, SSL provisioning, DNS management, Git</p>
+  <p class="skills-line"><span class="cat">Performance and SEO:</span> Core Web Vitals, caching and CDN debugging, canonical URL handling, Google Search Console, plugin conflict resolution</p>
+
+</body>
+</html>

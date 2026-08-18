@@ -17,5 +17,5 @@ export const personalData = {
   facebook: 'https://www.facebook.com/sabbir.me',
   linkedIn: 'https://www.linkedin.com/in/sabbir-ahmed-pix',
   twitter: 'https://x.com/SabbirPixiefy',
-  resume: ""
+  resume: '/Sabbir-Ahmed-CV.pdf'
 }

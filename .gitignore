@@ -37,3 +37,6 @@ next-env.d.ts
 
 # superpowers SDD scratch
 .superpowers/
+
+# CV build artifacts — the served copies live in public/
+cv/*.pdf
