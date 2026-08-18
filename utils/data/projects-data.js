@@ -25,7 +25,7 @@ export const projectsData = [
     id: 2,
     name: 'Lineflow — Headless WordPress Storefront',
     description:
-      "A Next.js storefront that reads from WordPress over the REST API, proxied server-side so WP credentials never reach the browser. Stripe payment intents and webhooks handle checkout, Cloudinary handles logo uploads, and a Postgres layer with its own migrations stores what WordPress should not. The engineering sits in the caching: every published slug is built into a sharded in-memory index behind Next's cache with tag-based revalidation, alongside on-demand revalidate and warm endpoints so ISR pages are primed rather than cold on first hit.",
+      "A Next.js storefront that reads from WordPress over the REST API, proxied server-side so WP credentials never reach the browser. Stripe payment intents and webhooks handle checkout, Cloudinary handles logo uploads, and a Postgres layer with its own migrations stores what WordPress should not. The engineering sits in the caching: every published slug is built into a sharded in-memory index behind Next's cache with tag-based revalidation, alongside on-demand revalidate and warm endpoints so ISR pages are primed rather than cold on first hit. Built RTL-aware throughout; the linked deployment runs in Hebrew.",
     tools: [
       'Next.js',
       'React',
@@ -41,7 +41,7 @@ export const projectsData = [
     ],
     role: 'Full-Stack Engineer',
     code: 'https://github.com/nildoria/lineflow',
-    demo: '',
+    demo: 'https://catalog.allaround.co.il/',
   },
   {
     id: 3,
