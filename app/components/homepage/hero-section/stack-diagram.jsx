@@ -1,21 +1,24 @@
 const LAYERS = [
   { title: "Browser", items: null },
-  { title: "Frontend", items: "React · Next.js · Tailwind · GSAP" },
+  { title: "Frontend", items: "React · TypeScript · Next.js · Tailwind" },
   {
-    title: "WordPress · PHP",
-    items: "Custom themes · Plugins · WooCommerce · Elementor",
+    title: "API & Auth",
+    items: "Node · Express · OAuth 2.0 · Gmail API",
   },
-  { title: "MySQL", items: null },
+  {
+    title: "Data",
+    items: "PostgreSQL · Row-Level Security · WordPress REST",
+  },
 ];
 
 // Label on the connector *between* layer i and layer i+1.
-const EDGES = ["", "REST API", "SQL"];
+const EDGES = ["", "REST", "SQL"];
 
 function StackDiagram() {
   return (
     <div className="stack-diagram rounded-lg border border-line p-6">
       <p className="mb-5 text-xs uppercase tracking-[0.12em] text-low">
-        Docker · Nginx · Git
+        Cloudflare · Fly.io · Docker · Git
       </p>
 
       {LAYERS.map((layer, i) => (
