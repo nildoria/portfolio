@@ -12,6 +12,7 @@ export const skillGroups = [
       'Next.js',
       'Tailwind CSS',
       'Vite',
+      'Lovable',
     ],
   },
   {
