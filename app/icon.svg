@@ -1,14 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Code icon" preserveAspectRatio="xMidYMid meet">
-  <rect x="0" y="0" width="64" height="64" rx="12" fill="#0d1224"/>
-
-  <g fill="none" stroke="#F48024" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Left bracket -->
-    <path d="M24 22 L15 32 L24 42"/>
-
-    <!-- Slash -->
-    <path d="M36 20 L28 44"/>
-
-    <!-- Right bracket -->
-    <path d="M40 22 L49 32 L40 42"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Sabbir Ahmed">
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0B0C0E"/>
+  <rect x="3" y="3" width="58" height="58" rx="12" fill="none" stroke="#7C9CC4" stroke-width="3"/>
+  <text x="32" y="43" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700"
+        letter-spacing="-0.5" fill="#7C9CC4" text-anchor="middle">SA</text>
 </svg>

@@ -1,16 +1,14 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// eslint-config-next 16 ships a flat config array directly. The previous
+// version wrapped the legacy config through FlatCompat, which threw a
+// circular-structure error during config validation — so lint could not run
+// at all. Importing the flat export removes the compat layer entirely.
+import next from "eslint-config-next/core-web-vitals";
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
+  ...next,
+  {
+    ignores: [".next/**", "out/**", "node_modules/**", "public/**"],
+  },
 ];
 
 export default eslintConfig;
