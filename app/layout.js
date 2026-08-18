@@ -24,17 +24,18 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Sabbir Ahmed - WordPress Developer & Web Developer",
+  title: "Sabbir Ahmed — Full-Stack Product Engineer",
   description:
-    "Portfolio of Sabbir Ahmed - WordPress Developer and Web Developer specializing in custom themes, plugins, Elementor widgets, WooCommerce solutions, and frontend animations.",
-  keywords: ["WordPress Developer", "Web Developer", "WooCommerce", "Elementor", "PHP", "React", "Next.js", "Sabbir Ahmed"],
+    "Full-stack product engineer. React and TypeScript on the surface, Node, Postgres and real security boundaries underneath, with ten years of WordPress behind it.",
+  keywords: ["Full-Stack Engineer", "React", "TypeScript", "Node.js", "PostgreSQL", "Supabase",
+    "Next.js", "WordPress Developer", "WooCommerce", "Elementor", "PHP", "Sabbir Ahmed"],
   authors: [{ name: "Sabbir Ahmed", url: "https://www.linkedin.com/in/sabbir-ahmed-pix" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Sabbir Ahmed - WordPress Developer & Web Developer",
-    description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
+    title: "Sabbir Ahmed — Full-Stack Product Engineer",
+    description: "Full-stack product engineer. React and TypeScript on the surface, Node, Postgres and real security boundaries underneath, with ten years of WordPress behind it.",
     siteName: "Sabbir Ahmed Portfolio",
     // No `images` here on purpose: app/opengraph-image.png is a Next file
     // convention and overrides this key, so declaring it twice only lets the
@@ -42,8 +43,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sabbir Ahmed - WordPress Developer & Web Developer",
-    description: "10+ years building custom WordPress themes, WooCommerce stores, Elementor widgets, and full-stack web apps.",
+    title: "Sabbir Ahmed — Full-Stack Product Engineer",
+    description: "Full-stack product engineer. React and TypeScript on the surface, Node, Postgres and real security boundaries underneath, with ten years of WordPress behind it.",
     creator: "@SabbirPixiefy",
   },
 };

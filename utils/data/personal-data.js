@@ -1,7 +1,7 @@
 export const personalData = {
   name: "SABBIR AHMED",
   profile: '/profile.png',
-  designation: "WordPress Developer & Web Developer",
+  designation: "Full-Stack Product Engineer",
   tagline: "I build web products end to end — React and TypeScript on the surface, Node, Postgres and real security boundaries underneath. Ten years of WordPress sits behind all of it.",
   // Rendered as separate paragraphs in the About section.
   description: [
