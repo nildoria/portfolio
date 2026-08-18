@@ -11,7 +11,7 @@ function Skills() {
           title="What I build with"
         />
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group) => (
             <div key={group.name}>
               <h3 className="text-xs uppercase tracking-[0.12em] text-low">
