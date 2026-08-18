@@ -1,52 +1,96 @@
 export const projectsData = [
-    {
-        id: 1,
-        name: 'Custom WordPress Plugin Development',
-        description: "Built a fully custom WordPress plugin with organized architecture including Elementor widget registration, admin settings pages, frontend asset enqueueing, AJAX functionality, and WooCommerce integration. The plugin includes affiliate system logic, header/footer display controls, and a custom dashboard with API-based integrations.",
-        tools: ['WordPress', 'PHP', 'Elementor', 'WooCommerce', 'AJAX', 'JavaScript', 'MySQL'],
-        role: 'WordPress Plugin Developer',
-        code: '',
-        demo: '',
-    },
-    {
-        id: 2,
-        name: 'WooCommerce Store Customization',
-        description: "Customized a WooCommerce store with tailored product archive pages, single product layouts, cart and checkout page redesigns, custom order statuses, packing slip and invoice customization, affiliate product display, and AJAX cart updates. Implemented custom pricing, subscription display adjustments, and product limit logic.",
-        tools: ['WordPress', 'WooCommerce', 'PHP', 'JavaScript', 'CSS3', 'AJAX', 'HTML5'],
-        role: 'WooCommerce Developer',
-        code: '',
-        demo: '',
-    },
-    {
-        id: 3,
-        name: 'GSAP & Elementor Animation Sections',
-        description: "Developed modern interactive animation sections for Elementor-based websites using GSAP and ScrollTrigger. Implemented horizontal scroll sections, pinned scroll sections, image reveal animations, SVG draw animations, text animations, marquee sliders, hover animations, and accordion card animations. Built reusable Elementor-compatible animation widgets.",
-        tools: ['GSAP', 'ScrollTrigger', 'JavaScript', 'Elementor', 'WordPress', 'CSS3', 'HTML5'],
-        role: 'Frontend Animation Developer',
-        code: '',
-        demo: '',
-    },
-    {
-        id: 4,
-        name: 'Website Automation & API Integration',
-        description: "Connected client websites with third-party services including Make.com automation workflows, Zapier integrations, Slack notification setup, Calendly booking integration, Supabase edge functions, AI chatbot integration, Google Forms and Sheets workflows, and CRM lead submission flows. Also handled REST API and webhook integrations for external services.",
-        tools: ['Make.com', 'Zapier', 'REST API', 'Webhooks', 'Slack', 'Calendly', 'Supabase', 'PHP', 'WordPress'],
-        role: 'Automation & Integration Developer',
-        code: '',
-        demo: '',
-    }
+  {
+    id: 1,
+    name: 'Pinbox — Shared Inbox for Teams',
+    description:
+      "A multi-tenant shared inbox built on the Gmail API. Workspaces with per-teammate assignment and read state, conversations threaded from parsed MIME, scheduled sends, and a contentEditable composer sanitised with DOMPurify. Gmail push notifications arrive through Cloud Pub/Sub webhooks with OIDC verification, while background workers handle watch renewal and reconciliation. Every database read and write is governed by Postgres Row-Level Security.",
+    tools: [
+      'React',
+      'TypeScript',
+      'TanStack Query',
+      'Node.js',
+      'Express',
+      'Gmail API',
+      'OAuth 2.0',
+      'PostgreSQL',
+      'Supabase',
+      'Cloudflare Pages',
+      'Fly.io',
+    ],
+    role: 'Full-Stack Product Engineer',
+    code: '',
+    demo: 'https://pinbox.pages.dev/',
+  },
+  {
+    id: 2,
+    name: 'Lineflow — Headless WordPress Storefront',
+    description:
+      "A Next.js storefront that reads from WordPress over the REST API, proxied server-side so WP credentials never reach the browser. Stripe payment intents and webhooks handle checkout, Cloudinary handles logo uploads, and a Postgres layer with its own migrations stores what WordPress should not. The engineering sits in the caching: every published slug is built into a sharded in-memory index behind Next's cache with tag-based revalidation, alongside on-demand revalidate and warm endpoints so ISR pages are primed rather than cold on first hit. Built RTL-aware throughout; the linked deployment runs in Hebrew.",
+    tools: [
+      'Next.js',
+      'React',
+      'Headless WordPress',
+      'PostgreSQL',
+      'Stripe',
+      'Cloudinary',
+      'JWT auth',
+      'Zod',
+      'Zustand',
+      'Radix UI',
+      'Tailwind CSS',
+    ],
+    role: 'Full-Stack Engineer',
+    code: 'https://github.com/nildoria/lineflow',
+    demo: 'https://catalog.allaround.co.il/',
+  },
+  {
+    id: 3,
+    name: 'Knowli — AI Support Chatbot for WordPress',
+    description:
+      "A WordPress-native RAG chatbot spanning three plugins. The core indexes pages, posts, products and PDFs, then answers from that content with citations instead of free-associating. Retrieval is hybrid — BM25 and keyword providers alongside cosine similarity over OpenAI embeddings — sitting behind search and answer interfaces so either half can be swapped without touching the rest. A confidence scorer decides when to answer and when to hand off, while intent and emotion detectors shape the tone. Two addons extend it: an OpenAI hub for 1536-dimension embeddings and GPT-4o-mini answers with indexing on post save, and a crawler for external sites and feeds.",
+    tools: [
+      'PHP',
+      'WordPress',
+      'OpenAI API',
+      'RAG',
+      'Vector search',
+      'BM25',
+      'MySQL',
+      'PSR-4',
+      'Composer',
+    ],
+    role: 'Plugin Architect',
+    code: 'https://github.com/nildoria/knowli',
+    demo: '',
+  },
+  {
+    id: 4,
+    name: 'WooCommerce Store Customization',
+    description:
+      "Customized a WooCommerce store with tailored product archive pages, single product layouts, cart and checkout page redesigns, custom order statuses, packing slip and invoice customization, affiliate product display, and AJAX cart updates. Implemented custom pricing, subscription display adjustments, and product limit logic.",
+    tools: ['WordPress', 'WooCommerce', 'PHP', 'JavaScript', 'CSS3', 'AJAX', 'HTML5'],
+    role: 'WooCommerce Developer',
+    code: '',
+    demo: '',
+  },
+  {
+    id: 5,
+    name: 'GSAP & Elementor Animation Sections',
+    description:
+      "Developed modern interactive animation sections for Elementor-based websites using GSAP and ScrollTrigger. Implemented horizontal scroll sections, pinned scroll sections, image reveal animations, SVG draw animations, text animations, marquee sliders, hover animations, and accordion card animations. Built reusable Elementor-compatible animation widgets.",
+    tools: ['GSAP', 'ScrollTrigger', 'JavaScript', 'Elementor', 'WordPress', 'CSS3', 'HTML5'],
+    role: 'Frontend Animation Developer',
+    code: '',
+    demo: '',
+  },
+  {
+    id: 6,
+    name: 'Website Automation & API Integration',
+    description:
+      "Connected client websites with third-party services including Make.com automation workflows, Zapier integrations, Slack notification setup, Calendly booking integration, Supabase edge functions, AI chatbot integration, Google Forms and Sheets workflows, and CRM lead submission flows. Also handled REST API and webhook integrations for external services.",
+    tools: ['Make.com', 'Zapier', 'REST API', 'Webhooks', 'Slack', 'Calendly', 'Supabase', 'PHP', 'WordPress'],
+    role: 'Automation & Integration Developer',
+    code: '',
+    demo: '',
+  },
 ];
-
-
-// Do not remove any property.
-// Leave it blank instead as shown below
-
-// {
-//     id: 1,
-//     name: '',
-//     description: "",
-//     tools: [],
-//     role: '',
-//     code: '',
-//     demo: '',
-// },
