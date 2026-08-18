@@ -29,7 +29,10 @@ function ContactForm() {
     }
     try {
       setIsLoading(true);
-      await axios.post(`${process.env.NEXT_PUBLIC_APP_URL}/api/contact`, userInput);
+      // Same-origin relative path. An absolute URL built from NEXT_PUBLIC_APP_URL
+      // broke in production: the variable was unset at build time, so the browser
+      // posted to "undefined/api/contact" and got a 404.
+      await axios.post("/api/contact", userInput);
       toast.success("Message sent successfully!");
       setUserInput({ name: "", email: "", message: "" });
     } catch (err) {

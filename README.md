@@ -56,7 +56,6 @@ Copy `.env.example` to `.env.local` and fill in what you need. Every variable is
 | Variable | Required for | Notes |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Correct OG/Twitter, sitemap and robots URLs | Falls back to `VERCEL_URL`, then `https://sabbir.bd`. Set it to `http://localhost:3000` in `.env.local` for local work. |
-| `NEXT_PUBLIC_APP_URL` | Client-side absolute URLs | |
 | `NEXT_PUBLIC_GTM` | Google Tag Manager | Omit to disable analytics |
 | `TELEGRAM_BOT_TOKEN` | Contact form → Telegram | From @BotFather |
 | `TELEGRAM_CHAT_ID` | Contact form → Telegram | Destination chat |
