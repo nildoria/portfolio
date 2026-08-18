@@ -30,7 +30,7 @@ function HeroSection() {
         <div className="mt-10 flex flex-wrap items-center gap-6">
           <Link
             href="/#projects"
-            className="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors duration-150 hover:bg-accent-hover"
+            className="rounded-md border border-transparent bg-accent px-5 py-2.5 text-sm font-medium text-bg transition-colors duration-150 hover:bg-accent-hover"
           >
             View work
           </Link>
@@ -39,7 +39,7 @@ function HeroSection() {
               href={personalData.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-mid transition-colors duration-150 hover:text-hi"
+              className="rounded-md border border-accent px-5 py-2.5 text-sm font-medium text-accent transition-colors duration-150 hover:bg-accent hover:text-bg"
             >
               Download resume
             </Link>
