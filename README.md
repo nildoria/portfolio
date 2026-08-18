@@ -1,10 +1,10 @@
 # Sabbir Ahmed — Portfolio
 
-Personal portfolio site of Sabbir Ahmed, WordPress and frontend developer.
+Personal portfolio site of Sabbir Ahmed, full-stack product engineer.
 
 Built with Next.js 16 (App Router), React 19, and Tailwind CSS 4. Content is data-driven — the sections read from plain JS files in `utils/data/`, so updating the site means editing data, not components.
 
-**Contact:** sabbir@pixiefy.com · [LinkedIn](https://www.linkedin.com/in/sabbir-ahmed-pix) · [GitHub](https://github.com/nildoria)
+**Live:** [sabbir.bd](https://sabbir.bd) · **Contact:** sabbir@pixiefy.com · [LinkedIn](https://www.linkedin.com/in/sabbir-ahmed-pix) · [GitHub](https://github.com/nildoria)
 
 ---
 
@@ -14,13 +14,13 @@ Built with Next.js 16 (App Router), React 19, and Tailwind CSS 4. Content is dat
 |---|---|
 | Framework | Next.js 16.0.10, App Router, Turbopack |
 | UI | React 19.2 |
-| Styling | Tailwind CSS 4 (CSS-first `@theme` config) + SCSS |
+| Styling | Tailwind CSS 4 (CSS-first `@theme` config) |
 | Fonts | Bricolage Grotesque (headings), Hanken Grotesk (body) |
 | Icons | react-icons |
-| Forms | Nodemailer + Telegram Bot API, reCAPTCHA |
+| Forms | Telegram Bot API, reCAPTCHA |
 | Blog source | WordPress REST API (wpkiddie.com) |
 
-> Tailwind 4 is configured in CSS via `@theme` in `app/css/globals.scss`. There is no `tailwind.config.js` — v4 does not read one unless explicitly loaded with `@config`.
+> Tailwind 4 is configured in CSS via `@theme` in `app/css/globals.css`. There is no `tailwind.config.js` — v4 does not read one unless explicitly loaded with `@config`.
 
 ---
 
@@ -45,7 +45,7 @@ Runs at http://localhost:3000.
 | `pnpm dev` | Dev server with Turbopack |
 | `pnpm build` | Production build |
 | `pnpm start` | Serve the production build |
-| `pnpm lint` | ESLint |
+| `pnpm lint` | ESLint (`eslint .`) |
 
 ---
 
@@ -55,7 +55,7 @@ Copy `.env.example` to `.env.local` and fill in what you need. Every variable is
 
 | Variable | Required for | Notes |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Correct OG/Twitter metadata | Falls back to `VERCEL_URL`, then `http://localhost:3000` |
+| `NEXT_PUBLIC_SITE_URL` | Correct OG/Twitter, sitemap and robots URLs | Falls back to `VERCEL_URL`, then `https://sabbir.bd`. Set it to `http://localhost:3000` in `.env.local` for local work. |
 | `NEXT_PUBLIC_APP_URL` | Client-side absolute URLs | |
 | `NEXT_PUBLIC_GTM` | Google Tag Manager | Omit to disable analytics |
 | `TELEGRAM_BOT_TOKEN` | Contact form → Telegram | From @BotFather |
@@ -71,7 +71,7 @@ Never commit `.env.local`. It is already gitignored.
 ```
 app/
 ├── api/
-│   ├── contact/      contact form handler (Telegram + email)
+│   ├── contact/      contact form handler (Telegram)
 │   ├── data/         portfolio data endpoint
 │   └── google/       reCAPTCHA verification
 ├── components/
@@ -79,9 +79,11 @@ app/
 │   ├── helper/       shared UI primitives
 │   ├── navbar.jsx
 │   └── footer.jsx
-├── css/              globals.scss (tokens), card.scss
+├── css/              globals.css (design tokens)
 ├── blog/             /blog route
 ├── layout.js         fonts, metadata, shell
+├── sitemap.js        /sitemap.xml
+├── robots.js         /robots.txt
 └── page.js           section composition
 
 utils/
@@ -90,9 +92,14 @@ utils/
 │   ├── experience.js
 │   ├── projects-data.js
 │   └── skills.js
-└── time-converter.js
+├── decode-entities.js
+└── check-email.js
 
-docs/superpowers/specs/   design specs
+scripts/
+├── check-contrast.mjs      asserts 17 WCAG pairings against globals.css
+└── test-decode-entities.mjs
+
+docs/superpowers/specs/   design spec
 ```
 
 ---
@@ -125,7 +132,7 @@ docker build -f Dockerfile.prod -t portfolio .   # production image
 
 The visual system is documented in [`docs/superpowers/specs/`](docs/superpowers/specs/). The current direction is a minimal dark theme: near-monochrome cool slate with a single muted accent, semantic color tokens, and an explicit motion budget.
 
-Colors are defined once as tokens in `app/css/globals.scss`. Components reference tokens, never raw hex.
+Colors are defined once as tokens in `app/css/globals.css`. Components reference tokens, never raw hex — `npm run check:contrast` parses that file and fails if any pairing drops below WCAG AA.
 
 ---
 
